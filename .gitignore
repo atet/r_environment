@@ -42,6 +42,8 @@ vignettes/*.pdf
 *.Renviron
 
 # Misc
+!nyc_squirrels.csv
+!nyc_squirrels_CLEAN.csv
 *.rds
 *.RDS
 *.csv
