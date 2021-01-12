@@ -1,7 +1,7 @@
 
 <a name="setting-up-an-r-development-environment"></a>
 
-# [atet](https://github.com/atet) / [***r\_environment***](https://github.com/atet/rmd_tutorial#setting-up-an-r-development-environment)
+# [atet](https://github.com/atet) / [***r\_environment***](https://github.com/atet/r_environment#setting-up-an-r-development-environment)
 
 [![.img/logo\_rstudio.png](.img/logo_rstudio.png)](#nolink)
 
@@ -48,7 +48,7 @@ RStudio](https://rstudio.com/products/rstudio/download/#download)
 1.  [Introduction to
     R](https://github.com/atet/learn/blob/master/programming/README.md#atet--learn--programming)
 2.  [Common tasks in
-    R](https://github.com/atet/rmd_tutorial#r-markdown-for-github-with-intermediate-r-tutorial)
+    R](https://github.com/atet/rmd_tutorial/blob/main/README.md#atet--rmd_tutorial)
 
 [**Back to Top**](#table-of-contents)
 
