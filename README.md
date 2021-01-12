@@ -1,7 +1,7 @@
 
 <a name="setting-up-an-r-development-environment"></a>
 
-# [atet](https://github.com/atet) / [***r\_environment***](https://github.com/atet/r_environment#setting-up-an-r-development-environment)
+# [atet](https://github.com/atet) / [***r\_environment***](https://github.com/atet/r_environment#atet--r_environment)
 
 [![.img/logo\_rstudio.png](.img/logo_rstudio.png)](#nolink)
 

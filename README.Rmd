@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 
 <a name="setting-up-an-r-development-environment"></a>
 
-# [atet](https://github.com/atet) / [**_r_environment_**](https://github.com/atet/r_environment#setting-up-an-r-development-environment)
+# [atet](https://github.com/atet) / [**_r_environment_**](https://github.com/atet/r_environment#atet--r_environment)
 
 [![.img/logo_rstudio.png](.img/logo_rstudio.png)](#nolink)
 
