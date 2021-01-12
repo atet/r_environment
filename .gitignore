@@ -42,8 +42,6 @@ vignettes/*.pdf
 *.Renviron
 
 # Misc
-!nyc_squirrels.csv
-!nyc_squirrels_CLEAN.csv
 *.rds
 *.RDS
 *.csv
@@ -70,3 +68,7 @@ vignettes/*.pdf
 *.TAR
 *.tgz
 *.TGZ
+
+# Exceptions
+!nyc_squirrels.csv
+!nyc_squirrels_CLEAN.csv
