@@ -66,7 +66,7 @@ RStudio](https://rstudio.com/products/rstudio/download/#download)
     use command line interface (CLI)
 2.  **Scripts** - Multiple scripts can be open and worked on
 3.  **Environment** - Lists all objects in memory
-4.  **Files/Plots/Packages/Help**
+4.  **Help/Plots/Directories/etc.**
 
 [**Back to Top**](#table-of-contents)
 
@@ -98,18 +98,19 @@ its own instance of RStudio.
 Your main operating code could be in a single `main.R` or within an
 executable R Markdown document (`*.Rmd`).
 
-Supporting code could be organized into one or more scripts in `./src`.
+You could organize files by creating new folders within your R Project:
 
-Outputs such as figures and/or reports could go in `./out`
-
-Local data can be organized into `./dat`.
+  - Supporting code could be organized into one or more scripts in
+    `./src`.
+  - Outputs such as figures and/or reports could go in `./out`
+  - Local data sources can be organized into `./dat`.
 
 > NOTE: If you don’t intend to version control large data files, make
 > sure you ignore them in `.gitignore`
 
 ### Version Control
 
-Multiple options:
+Multiple options to align with your existing workflows:
 
   - Integrated into RStudio: Tools ► Version Control
   - Desktop client: SourceTree, git-gui, etc.
@@ -124,33 +125,36 @@ Multiple options:
 
 ## Development Workflow
 
-***You’ve been tasked to visualize information about all the squirrels
-in NYC’s Central Park<sup>[\[1,2\]](#acknowledgments)</sup>***
+***You’ve been tasked to visualize information about squirrels in New
+York City’s Central Park<sup>[\[1,2\]](#acknowledgments)</sup>***
 
 1.  Create a new R Project
 2.  Create a folder `./dat` to hold data and `./out` for output
-3.  Create a new R Script
+3.  Create a new R Script named `main.R`
 4.  Copy the following code into the script
 
 <!-- end list -->
 
 ``` r
-# 1. Load packages
-install.packages("ggplot2") # Install package
-library(ggplot2)            # Load package into environment
+## 1. Setup Environment: Load packages
+install.packages("ggplot2") # Install this visualization package
+library(ggplot2)            # Load the package into environment
 
-# Load data
+## 2. Load Data
+# Import data directly from the internet
 df = read.csv("https://data.cityofnewyork.us/resource/vfnx-vebw.csv")
 nrow(df)
 # 1,000 observations, this seems off.. this API requires a token for all of the data...
 
+# Load complete data from this source instead
 df = read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-10-29/nyc_squirrels.csv")
 nrow(df)
-# 3,023 observations, that's more like it
+# 3,023 observations, that's more like it!
 
-# Save source data locally
+# Save source data locally just in case
 write.csv(df, "./dat/nyc_squirrels.csv", row.names = FALSE)
 
+## 3. Clean Data
 # Remove all NAs or "?" for column $age
 df = df[!is.na(df$age) & df$age != "?",]
 
@@ -160,6 +164,7 @@ df = df[!is.na(df$primary_fur_color),]
 # Save cleaned data locally
 write.csv(df, "./dat/nyc_squirrels_CLEAN.csv", row.names = FALSE)
 
+## 4. Create Data Product: Visualization
 # Visualize proportions of squirrels by $age and $primary_fur_color
 plot_draft = ggplot(df, aes(fill = primary_fur_color, x = age)) + 
                 geom_bar(position="dodge", stat="count")
@@ -211,6 +216,6 @@ dev.off()
 
 -----
 
-<p align="center">Copyright &copy; 2020-&infin; <a href="https://www.athitkao.com" target="_blank">Athit Kao</a>, <a href="https://www.athitkao.com/tos.html" target="_blank">Terms and Conditions</a></p>
+<p align="center">Copyright &copy; 2021-&infin; <a href="https://www.athitkao.com" target="_blank">Athit Kao</a>, <a href="https://www.athitkao.com/tos.html" target="_blank">Terms and Conditions</a></p>
 
 -----
